@@ -1,7 +1,7 @@
 <template>
     <div>
-       <Header :keywork="key"></Header>
-       HOme
+    <Header :keywork="key"></Header>
+     
     </div>
 </template>
 <script>
@@ -17,4 +17,6 @@ export default {
         Header
     }
 }
+
+ 
 </script>

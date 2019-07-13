@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header :keywork="key"></Header>    
     <van-cell class="list proList indexProList">
       <template slot="title">
         <div class="custom-title">
@@ -17,7 +18,7 @@
               <p class="indexProListLi1YearText yearNumPos">
                 历史年化收益率
                 <img class="repayment_type_img" src="../assets/img/point.png" @click="hint" />
-                <span class="money_type1" style="display: inline;" v-if="show" >历史年化收益率仅供参考，不代表未来收益。</span>
+                <span class="money_type1" style="display: inline;" v-if="show">历史年化收益率仅供参考，不代表未来收益。</span>
               </p>
             </li>
             <li class="indexProListLi2">
@@ -32,7 +33,6 @@
                 :v-model="50"
                 :rate="30"
                 :speed="100"
-               
                 color="#07c160"
                 fill="#fff"
                 size="48px"
@@ -40,7 +40,9 @@
                 :stroke-width="60"
                 default="还款中"
               >
-              <span><slot></slot></span>
+                <span>
+                  <slot></slot>
+                </span>
               </van-circle>
             </li>
             <div style="clear: both;"></div>
@@ -72,7 +74,7 @@
               <p class="indexProListLi1YearText yearNumPos">
                 历史年化收益率
                 <img class="repayment_type_img" src="../assets/img/point.png" @click="hint" />
-                <span class="money_type1" style="display: inline;" v-if="show" >历史年化收益率仅供参考，不代表未来收益。</span>
+                <span class="money_type1" style="display: inline;" v-if="show">历史年化收益率仅供参考，不代表未来收益。</span>
               </p>
             </li>
             <li class="indexProListLi2">
@@ -94,7 +96,7 @@
                 :stroke-width="60"
                 default="还款中"
               >
-              <span slot="default">还款中</span>
+                <span slot="default">还款中</span>
               </van-circle>
             </li>
             <div style="clear: both;"></div>
@@ -111,22 +113,27 @@
   </div>
 </template>
 <script>
+import Header from '../components/Header.vue'
 export default {
   data() {
-      return{
-        show:false
-      }
+    return {
+      show: false,
+      key:"Item",
+    };
   },
   methods: {
     hint() {
       this.show = !this.show;
     }
   },
-//   computed: {
-//     text() {
-//       return "还款中";
-//     }
-//   }
+  components:{
+    Header
+  }
+  //   computed: {
+  //     text() {
+  //       return "还款中";
+  //     }
+  //   }
 };
 </script>
 <style>
@@ -232,17 +239,20 @@ export default {
   font-size: 14px;
 }
 .money_type1 {
-    position: absolute;
-    top: -40px;
-    background: rgba(0,0,0,.7);
-    color: #dfdfdf;
-    line-height: 23px;
-    padding: 5px;
-    border-radius: 5px;
-    width: 180%;
-    left: 10px;
+  position: absolute;
+  top: -40px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #dfdfdf;
+  line-height: 23px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 180%;
+  left: 10px;
 }
 .yearNumPos {
-    position: relative;
+  position: relative;
+}
+.van-nav-bar__left{
+  font-size: 18px;
 }
 </style>

@@ -12,7 +12,7 @@
 
 <script>
 import Vue from "vue";
-import { Tabbar,TabbarItem,NavBar,Cell,CellGroup,Tag,Toast,Circle} from "vant";
+import { Tabbar,TabbarItem,NavBar,Cell,CellGroup,Tag,Toast,Circle,Field,Button} from "vant";
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(NavBar);
 Vue.use(Cell);
@@ -20,16 +20,50 @@ Vue.use(CellGroup);
 Vue.use(Tag);
 Vue.use(Toast);
 Vue.use(Circle);
+Vue.use(Field);
+Vue.use(Button);
 
 
 export default {
   name: "app",
-  components: {}
+  // data(){
+  //   return{
+  //     logined:false
+  //   }
+  // },
+  components: {
+
+  },
+  computed:{
+
+  },
+//   methods:{
+//     created(){
+//     console.log("this:", this);
+// let token = localStorage.getItem("Authorization");
+//     this.logined = token ? true : false;
+
+//     }
+//   },
+
 };
 </script>
 
 <style>
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, 
+iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, 
+address, big, cite, code, del, dfn, 
+em, img, ins, kbd, q, s, samp, small, 
+strike, strong, sub, sup, tt, var, 
+b, i, u, center, dl, dt, dd, ol, ul, 
+li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, 
+tr, th, td, article, aside, canvas, details, 
+embed, fieldset, figure, figcaption, 
+footer, header, hgroup, menu, nav, output,
+ruby, section, summary, time,
+mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
