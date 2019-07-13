@@ -1,8 +1,5 @@
 <template>
   <div class="app">
-    <van-nav-bar>
-      <span slot="left">华夏信财</span>
-    </van-nav-bar>
     <router-view />
     <van-tabbar route class="tabbar">
       <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>

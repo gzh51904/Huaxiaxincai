@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 // 引入页面组件
 import Home from '../pages/Home.vue';
 import Project from '../pages/Project.vue';
-import Discover from '../pages/Discover.vue';
+import Discovery from '../pages/Discovery.vue';
 import Mine from '../pages/Mine.vue';
 
 let router = new VueRouter({
@@ -20,7 +20,7 @@ let router = new VueRouter({
     },{
         name:'Discover',
         path:'/discover',
-        component:Discover
+        component:Discovery
     },{
         name:'Mine',
         path:'/mine',
