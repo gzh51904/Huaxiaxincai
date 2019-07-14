@@ -42,6 +42,7 @@
 </template>
 <script>
 import Vue from "vue";
+import Footer from "../components/Footer.vue"
 import { Toast } from "vant";
 Vue.use(Toast);
 export default {
@@ -54,6 +55,9 @@ export default {
         password: ""
       }
     };
+  },
+  compontents:{
+    Footer
   },
   computed: {
     rightPhone() {

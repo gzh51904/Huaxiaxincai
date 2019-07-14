@@ -110,10 +110,12 @@
         </div>
       </template>
     </van-cell>
+    <Footer></Footer>
   </div>
 </template>
 <script>
 import Header from '../components/Header.vue'
+import Footer from "../components/Footer.vue"
 export default {
   data() {
     return {
@@ -127,7 +129,8 @@ export default {
     }
   },
   components:{
-    Header
+    Header,
+    Footer
   }
   //   computed: {
   //     text() {

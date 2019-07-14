@@ -7,6 +7,8 @@ import 'amfe-flexible';
 import './assets/css/iconfont/iconfont.css'
 require("./assets/css/base.css");
 import axios from 'axios';
+import "mint-ui/lib/style.css"
+import 'vant/lib/icon/local.css';
 Vue.prototype.$axios = axios;
 //配置基本路径
 axios.defaults.baseURL = 'http://localhost:2019';

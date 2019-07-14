@@ -1,5 +1,6 @@
-<template>
+<template>  
     <div id="discovery" class="clearfix">
+        <router-view></router-view>
         <Header :keywork="key"></Header>
         <div class="indexMenus">
             <div v-for="item in indexMenus">
@@ -64,7 +65,7 @@
               
             </div>
               <div class="hotNews">
-                <div class="title"><p>精彩阅读</p><i><img src="https://wap.huaxiaxincai.com/img/icon/arrow.png" alt=""></i></div>             
+                <div class="title" @click="toNewsList"><p>精彩阅读</p><i><img src="https://wap.huaxiaxincai.com/img/icon/arrow.png" alt=""></i></div>             
                 <ul class="newsList">
                     <li class="news" v-for="item in hotNews">
                         <p>{{item.title}}</p> <img :src="item.realMbContentUrl" alt="">
@@ -73,6 +74,7 @@
               
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
 <script>
@@ -82,6 +84,7 @@ import axios from "axios"
 import { Swipe, SwipeItem } from 'mint-ui';
 // import 'mint-ui/lib/style.css'
 import "mint-ui/lib/style.css"
+import Footer from "../components/Footer.vue"
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 
@@ -116,8 +119,15 @@ export default {
           
     },
     components:{
-        Header
+        Header,
+        Footer
     },
+    methods:{
+        toNewsList(){
+            this.$router.push({name:'newsList'})
+        }
+    }
+    ,
     async created(){
         let data=await axios.post('https://wap.huaxiaxincai.com/caifu-web-open-mall/mallproductconfig/selectIsHotMallProductList?page=1&rows=3')
         // console.log(data.data.data)

@@ -11,7 +11,8 @@ import Discovery from '../pages/Discovery.vue';
 import Mine from '../pages/Mine.vue';
 import Login from '../pages/Login.vue';
 import Reg from '../pages/Reg.vue';
-
+import newsList from '../pages/newsList.vue';
+import Sign from '../pages/Sign.vue';
 import axios from 'axios';
 
 //实例化router并配置参数
@@ -31,11 +32,17 @@ let router = new VueRouter({
     {
         name:'Project',
         path:'/project',
-        component:Project
+        component:Project,
+        
     },{
         name:'Discover',
         path:'/discover',
-        component:Discovery
+        component:Discovery,
+        // children:[{
+        //     // name:'newsList',
+        //     path:'/newslist',
+        //     component:newsList
+        // }]
     },{
         name:'Mine',
         path:'/mine',
@@ -49,7 +56,17 @@ let router = new VueRouter({
         name:'Reg',
         path:'/reg',
         component:Reg
-    }]
+    },{
+        name:'newsList',
+        path:'/newslist',
+        component:newsList
+    },{
+        name:'Sign',
+        path:'/sign',
+        component:Sign
+    }
+ 
+    ]
 });
 
 router.beforeEach((to,from,next)=>{

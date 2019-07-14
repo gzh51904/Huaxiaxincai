@@ -39,7 +39,6 @@ body {
 }
 
 .container {  /*内容、版心 提取 */
-    width: 980px;
     margin:0 auto;
 }
 .fl {

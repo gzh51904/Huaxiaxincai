@@ -1,20 +1,37 @@
 <template>
   <div class="app">
-    <router-view />
+    <van-tabbar route class="tabbar">
+      <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item replace to="/project" icon="balance-list">项目</van-tabbar-item>
+      <van-tabbar-item replace to="/discover" icon="photograph">发现</van-tabbar-item>
+      <van-tabbar-item replace to="/mine" icon="manager">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+import { Tabbar,TabbarItem,NavBar,Cell,CellGroup,Tag,Toast,Circle,Field,Button} from "vant";
+Vue.use(Tabbar).use(TabbarItem);
+Vue.use(NavBar);
+Vue.use(Cell);
+Vue.use(CellGroup);
+Vue.use(Tag);
+Vue.use(Toast);
+Vue.use(Circle);
+Vue.use(Field);
+Vue.use(Button);
+
 
 export default {
-  name: "app",
+  name: "Footer",
   // data(){
   //   return{
   //     logined:false
   //   }
   // },
   components: {
-  
+
   },
   computed:{
 
