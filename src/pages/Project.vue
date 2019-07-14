@@ -10,8 +10,8 @@
             <p class="title">{{this.newp.signName}}</p>
             <em class="tip">{{this.newp.signDescribe}}</em>
           </div>
-          <div v-for="item in newp" :key="item.id">
-            <ul>
+          <div>
+            <ul v-for="item in newp" :key="item.id" @click.stop="goto(item.id)">
               <li class="indexProListLi1">
                 <p class="indexProListLi1Year ng-binding">
                   {{item.yearRateLowText}}
@@ -48,7 +48,7 @@
                   :text="text"
                   size="48px"
                   color="#989898"
-                  layer-color="#989898"
+                  layer-color="#fff"
                   slot="default"
                 >
                   <span>{{item.statusText}}</span>
@@ -58,8 +58,14 @@
               <!--产品标签说明-->
               <div class="productNLabel">
                 <div class="productLabelMsg">
-                  <van-tag color="#ff8f10" plain>{{item.stampContents.slice(19,25)}}</van-tag>
-                  <van-tag color="#ff8f10" plain>{{item.stampContents.slice(46,52)}}</van-tag>
+                  <!-- <van-tag color="#ff8f10" plain>{{item.stampContents.slice(19,25)}}</van-tag>
+                  <van-tag color="#ff8f10" plain>{{item.stampContents.slice(46,52)}}</van-tag> -->
+                  <van-tag
+                    color="#ff8f10"
+                    plain
+                    v-for="item in naward"
+                    :key="item.id"
+                  >{{item.activitylabel}}</van-tag>
                 </div>
               </div>
             </ul>
@@ -73,7 +79,7 @@
             <em class="tip">{{this.huaxinbao.signDescribe}}</em>
           </div>
           <div>
-            <ul v-for="item in huaxinbao" :key="item.id">
+            <ul v-for="item in huaxinbao" :key="item.id" @click.stop="goto(item.id)">
               <li class="indexProListLi1">
                 <p class="indexProListLi1Year ng-binding">
                   {{item.yearRateLowText}}
@@ -120,7 +126,12 @@
               <!--产品标签说明-->
               <div class="productNLabel">
                 <div class="productLabelMsg">
-                  <van-tag color="#ff8f10" plain>限时加息1%</van-tag>
+                  <!-- <van-tag
+                    color="#ff8f10"
+                    plain
+                    v-for="item in haward"
+                    :key="item.id"
+                  >{{item.activitylabel}}</van-tag> -->
                 </div>
               </div>
             </ul>
@@ -131,10 +142,10 @@
         <template slot="title">
           <div class="custom-title">
             <p class="title">{{this.dingxinbao.signName}}</p>
-            <em class="tip">{{this.dingxinbao.signName}}</em>
+            <em class="tip">{{this.dingxinbao.signDescribe}}</em>
           </div>
           <div>
-            <ul v-for="item in dingxinbao" :key="item.id">
+            <ul v-for="item in dingxinbao" :key="item.id" @click.stop="goto(item.id)">
               <li class="indexProListLi1">
                 <p class="indexProListLi1Year ng-binding">
                   {{item.yearRateLowText}}
@@ -166,7 +177,7 @@
               <li class="indexProListLi3">
                 <van-circle
                   v-model="currentRate"
-                  :rate="item.proportion"
+                  :rate="item.proportion*100"
                   :speed="100"
                   :text="text"
                   size="48px"
@@ -182,6 +193,12 @@
               <div class="productNLabel">
                 <div class="productLabelMsg">
                   <van-tag color="#ff8f10" plain>限时加息1%</van-tag>
+                  <!-- <van-tag
+                    color="#ff8f10"
+                    plain
+                    v-for="item in daward"
+                    :key="item.id"
+                  >{{item.activitylabel}}</van-tag> -->
                 </div>
               </div>
             </ul>
@@ -189,7 +206,7 @@
         </template>
       </van-cell>
       <div class="prodocutBeforeHint">
-        <div class="prodocutBeforeHintMsg" ng-click="selectProBidList()" ng-if="selectProType==0">
+        <div class="prodocutBeforeHintMsg" style="margin-bottom:46px">
           <p class="prodocutBeforeHintArrow"></p>
           <p>查看往期项目</p>
         </div>
@@ -199,7 +216,7 @@
 </template>
 <script>
 import Vue from "vue";
-import { Circle, Toast, PullRefresh ,Panel} from "vant";
+import { Circle, Toast, PullRefresh, Panel } from "vant";
 
 Vue.use(Panel);
 Vue.use(PullRefresh);
@@ -213,8 +230,10 @@ export default {
       huaxinbao: [],
       dingxinbao: [],
       recommed: [],
+      naward:[],
+      baward:[],
+      daward:[],
       show: false,
-      count: 0,
       isLoading: false
     };
   },
@@ -229,8 +248,13 @@ export default {
       setTimeout(() => {
         this.$toast("刷新成功");
         this.isLoading = false;
-        this.count++;
       }, 500);
+    },
+    goto(id) {
+      console.log(666);
+      this.$router.push({ name: "Itemdetails", params: { id } });
+
+      // this.$router.replace("/Itemdetails");
     }
   },
   // mounted() {
@@ -259,21 +283,23 @@ export default {
     this.newp = arr.filter(item => item.productName == "新手专享");
     this.newp.signName = this.newp[0].signName;
     this.newp.signDescribe = this.newp[0].signDescribe;
-    console.log(
-      this.newp[0],
-      this.newp[0].stampContents.slice(19, 25),
-      this.newp[0].stampContents.slice(45, 52)
-    );
+    this.naward = JSON.parse(this.newp[0].stampContents);
     console.log(this.newp[0].stampContents);
+    console.log(this.award);
 
     this.huaxinbao = arr.filter(item => item.signName == "华信宝系列");
     this.huaxinbao.signName = this.huaxinbao[0].signName;
     this.huaxinbao.signDescribe = this.huaxinbao[0].signDescribe;
+    // this.haward = JSON.parse(this.huaxinbao.stampContents);
     console.log(this.huaxinbao);
+    console.log(this.huaxinbao.stampContents);
+    
 
     this.dingxinbao = arr.filter(item => item.signName == "定信宝系列");
     this.dingxinbao.signName = this.dingxinbao[0].signName;
     this.dingxinbao.signDescribe = this.dingxinbao[0].signDescribe;
+    // this.daward = JSON.parse(this.dingxinbao.stampContents);
+
   }
 };
 </script>
@@ -410,7 +436,6 @@ export default {
 .prodocutBeforeHintMsg p {
   float: left;
 }
-
 .prodocutBeforeHintArrow {
   background: url("../assets/img/proBeforeArrow.png") no-repeat;
   width: 12px;

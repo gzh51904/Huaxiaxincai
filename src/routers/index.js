@@ -11,6 +11,7 @@ import Discover from '../pages/Discover.vue';
 import Mine from '../pages/Mine.vue';
 import Login from '../pages/Login.vue';
 import Reg from '../pages/Reg.vue';
+import Itemdetails from '../pages/Itemdetails.vue';
 
 import axios from 'axios';
 
@@ -49,6 +50,10 @@ let router = new VueRouter({
         name:'Reg',
         path:'/reg',
         component:Reg
+    },{
+        name:'Itemdetails',
+        path:'/itemdetails',
+        component:Itemdetails
     }]
 });
 
