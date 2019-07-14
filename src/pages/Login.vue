@@ -107,6 +107,9 @@ export default {
         // let targetPath = this.$route.query.redirectTo;
         this.$router.replace('/reg')
     }
+  },
+  Created(){
+    console.log("Login:",this.$route);
   }
 };
 </script>
