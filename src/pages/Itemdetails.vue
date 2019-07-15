@@ -43,7 +43,7 @@
         <div class="productNewDetProgressMainTop" ng-if="productDetail.stampContents.length>0">
           <div class="productNewDetProgressMainTopList ng-binding">
             <p>服务奖励</p>
-            <span class="borBg0" :class="{ 'active': borBg+idx }" v-for="(item,idx) in award" :key="item.id">{{item.activitylabel}}</span>
+            <span class="borBg0"  v-for="item in award" :key="item.id">{{item.activitylabel}}</span>
             <!-- <span class="borBg1" :class="{ 'active': isActive }">送50元红包</span> -->
           </div>
         </div>

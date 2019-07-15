@@ -24,7 +24,7 @@
                   <img
                     class="repayment_type_img"
                     src="../assets/img/point.png"
-                    @click="hint()"
+                    @click.stop="hint()"
                   />
                   <span
                     class="money_type1"
@@ -92,7 +92,7 @@
                   <img
                     class="repayment_type_img"
                     src="../assets/img/point.png"
-                    @click="hint()"
+                    @click.stop="hint()"
                   />
                   <span
                     class="money_type1"
@@ -158,7 +158,7 @@
                   <img
                     class="repayment_type_img"
                     src="../assets/img/point.png"
-                    @click="hint()"
+                    @click.stop="hint()"
                   />
                   <span
                     class="money_type1"
