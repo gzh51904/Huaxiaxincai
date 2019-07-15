@@ -374,7 +374,6 @@ export default {
       }, 1000);
     },
     goto(name){
-      console.log(111)
       this.$router.push({
         name
       })
