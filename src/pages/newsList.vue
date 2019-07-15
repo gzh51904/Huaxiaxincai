@@ -2,12 +2,11 @@
     <div class="container">        
         <h2 class="title">热门新闻</h2>
         <ul
-            class="newsList"
-            v-infinite-scroll="loadMore"
+            class="newsList"    
             infinite-scroll-distance="5"
             infinite-scroll-immediate-check="flase"
             >
-            <li v-for="item in list">
+            <li v-for="item in list" @click='goto(item.id)' :key="item.id">
                 <h3>{{item.title}}</h3>
                 <span>{{item.updateTimeStr}}</span>
                 <img :src="item.realMbContentUrl" alt="">
@@ -30,17 +29,9 @@ export default {
         }
     },
     methods:{
-        // loadMore() {
-        //     this.loading = true;
-        //     setTimeout(() => {
-        //         let last = this.list[this.list.length - 1];
-        //         for (let i = 1; i <= 10; i++) {
-        //         this.list.push(last + i);
-        //         }
-        //         this.loading = false;
-        //     }, 2500);
-        // },
-       
+        goto(id){
+            this.$router.push({name:"News",params:{id}})
+        }
     },
     async created(){
         console.log(123)

@@ -13,7 +13,12 @@ import Login from '../pages/Login.vue';
 import Reg from '../pages/Reg.vue';
 import newsList from '../pages/newsList.vue';
 import Sign from '../pages/Sign.vue';
+import Notice from '../pages/Notice.vue';
+import News from '../pages/News.vue';
+
 import axios from 'axios';
+
+
 
 //实例化router并配置参数
 let router = new VueRouter({
@@ -64,7 +69,15 @@ let router = new VueRouter({
         name:'Sign',
         path:'/sign',
         component:Sign
-    }
+    },{
+        name:'Notice',
+        path:'/notice',
+        component:Notice
+    },{
+        name:'News',
+        path:'/news/:id',
+        component:News
+    },
  
     ]
 });

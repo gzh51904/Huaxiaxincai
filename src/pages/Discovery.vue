@@ -3,7 +3,7 @@
         <router-view></router-view>
         <Header :keywork="key"></Header>
         <div class="indexMenus">
-            <div v-for="item in indexMenus">
+            <div v-for="item in indexMenus" :key="item.id">
                 <img :src="item.imgUrl" alt="">
                 <p>{{item.text}}</p>
             </div>
@@ -67,7 +67,7 @@
               <div class="hotNews">
                 <div class="title" @click="toNewsList"><p>精彩阅读</p><i><img src="https://wap.huaxiaxincai.com/img/icon/arrow.png" alt=""></i></div>             
                 <ul class="newsList">
-                    <li class="news" v-for="item in hotNews">
+                    <li class="news" v-for="item in hotNews" @click="goto(item.id)">
                         <p>{{item.title}}</p> <img :src="item.realMbContentUrl" alt="">
                     </li>  
                 </ul>
@@ -125,6 +125,9 @@ export default {
     methods:{
         toNewsList(){
             this.$router.push({name:'newsList'})
+        },
+        goto(id){
+            this.$router.push({name:"News",params:{id}})
         }
     }
     ,
@@ -138,7 +141,7 @@ export default {
         this.hotActivity=data1.data.data;
 
         let data2 = await axios.post('https://wap.huaxiaxincai.com/caifu-web-open-platform/content/selectNewsList?page=1&rows=3&type=4')
-    // console.log(data2.data.data)
+    console.log(data2.data.data)
         this.hotNews=data2.data.data;
     }
     

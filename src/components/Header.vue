@@ -2,8 +2,8 @@
     <div id="header">
         <div class="content clearfix">
             <h1 >{{getTitle()}}</h1>
-            <p class="iconfont icon-qiandao" v-if="keywork=='Home'"></p>
-            <p class="iconfont icon-lingdang" v-if="keywork=='Home'"></p>
+            <p class="iconfont icon-qiandao" v-if="keywork=='Home'" ></p>
+            <p class="iconfont icon-lingdang" v-if="keywork=='Home'" @click="goto"></p>
         </div>
     </div>
 </template>
@@ -40,6 +40,9 @@ export default {
                 return item.key==this.keywork
             })[0];
             return current? current.title:this.keywork
+        },
+        goto(){
+            this.$router.push({name:'Notice'})
         }
     }
 
