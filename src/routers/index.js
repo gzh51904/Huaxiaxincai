@@ -15,6 +15,7 @@ import newsList from '../pages/newsList.vue';
 import Sign from '../pages/Sign.vue';
 import Notice from '../pages/Notice.vue';
 import News from '../pages/News.vue';
+import ActivityList from '../pages/ActivityList.vue';
 
 import axios from 'axios';
 
@@ -77,7 +78,11 @@ let router = new VueRouter({
         name:'News',
         path:'/news/:id',
         component:News
-    },
+    },{
+        name:"ActivityList",
+        path:"/activitylist",
+        component:ActivityList
+    }
  
     ]
 });

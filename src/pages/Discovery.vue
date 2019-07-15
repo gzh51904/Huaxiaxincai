@@ -54,7 +54,7 @@
                 </ul>
               
             </div>
-            <div class="hotActivity">
+            <div class="hotActivity" @click="goAtv">
                 <div class="title"><p>热门活动</p><i><img src="https://wap.huaxiaxincai.com/img/icon/arrow.png" alt=""></i></div>             
                 <div class="hotConpon">
                    <mt-swipe :auto="4000">
@@ -128,7 +128,10 @@ export default {
         },
         goto(id){
             this.$router.push({name:"News",params:{id}})
-        }
+        },
+        goAtv(){
+            this.$router.push({name:"ActivityList"})
+        },
     }
     ,
     async created(){
