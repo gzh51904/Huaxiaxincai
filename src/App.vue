@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Vue from 'vue';
+import {Calendar,ButtonGroup,Button} from 'element-ui'
+Vue.use(Calendar);
+Vue.use(ButtonGroup)
+Vue.use(Button)
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+
   }
 }
 </script>
 
 <style>
-#app {
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+  list-style: none;
+}
+#app{
+  width: 100%;
+
+}
+/* #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+} */
 </style>
