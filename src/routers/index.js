@@ -30,7 +30,10 @@ import date from '../pages/date.vue';
 import bankCard from '../pages/bankCard.vue';
 import account from '../pages/account.vue';
 import axios from 'axios';
-
+import index from '../pages/index.vue'
+import noticelist from '../pages/noticelist.vue'
+import Productnews from '../pages/Productnews.vue'
+import AboutHuaXia from '../pages/AboutHuaXia.vue'
 
 
 //实例化router并配置参数
@@ -40,11 +43,6 @@ let router = new VueRouter({
         name:'Home',
         path:'/home',
         component:Home
-    },
-    // 重定向
-    {
-        path: '/',
-        redirect: {name:'Home'}
     },
     
     {
@@ -154,7 +152,28 @@ let router = new VueRouter({
         name : 'account',
         path : '/account',
         component:account
+    },{
+        name:'index',
+        path:'/index',
+        component:index,
     },
+    {
+        name:'noticelist',
+        path:'/noticelist',
+        component:noticelist
+    },{
+        path:'/',
+        redirect:{name:'index'}
+    },
+    {
+        name:'Productnews',
+        path:'/productnews',
+        component:Productnews
+    },{
+        name:'AboutHuaXia',
+        path:'/abouthuaxia',
+        component:AboutHuaXia
+    }
  
     ]
 });

@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <van-tabbar route class="tabbar">
-      <van-tabbar-item replace to="/home" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item replace to="/index" icon="home-o">首页</van-tabbar-item>
       <van-tabbar-item replace to="/project" icon="balance-list">项目</van-tabbar-item>
       <van-tabbar-item replace to="/discover" icon="photograph">发现</van-tabbar-item>
       <van-tabbar-item replace to="/mine" icon="manager">我的</van-tabbar-item>

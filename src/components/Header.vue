@@ -60,7 +60,7 @@ export default {
         background-color: #fff;
         width: 100%;
         box-shadow: 0 0.04rem 0.04rem #F7F9F8;
-        z-index: 100;
+        z-index: 1000;
         .content{
             overflow: hidden;
             h1{
