@@ -42,7 +42,6 @@ export default {
         }
     },
     async created(){
-        console.log(123)
             let {data} = await axios.post('https://wap.huaxiaxincai.com/caifu-web-open-platform/activity/findActivityRecordList?page=1&rows=10')
             // console.log(data.data.data)
             this.list = data.data

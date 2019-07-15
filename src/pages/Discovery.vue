@@ -144,7 +144,7 @@ export default {
         this.hotActivity=data1.data.data;
 
         let data2 = await axios.post('https://wap.huaxiaxincai.com/caifu-web-open-platform/content/selectNewsList?page=1&rows=3&type=4')
-    console.log(data2.data.data)
+    // console.log(data2.data.data)
         this.hotNews=data2.data.data;
     }
     

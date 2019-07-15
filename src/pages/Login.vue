@@ -79,7 +79,6 @@ export default {
       } else {
         let {phone,password} = this.ruleForm;
         // let password;
-        console.log(this.ruleForm);
         this.$axios
           .get("/login", {
             params: {
@@ -89,7 +88,7 @@ export default {
           })
           .then(res => {
             let { data, header } = res;
-            console.log(res);
+           
             if(data.code == 250){
                 Toast("账号不存在或密码错误！");
             }else if(data.code == 1000){
@@ -103,7 +102,7 @@ export default {
             }
           })
           .catch(error => {
-            console.log(error);
+           
           });
       }
     },

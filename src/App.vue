@@ -1,10 +1,15 @@
 <template>
-  <div class="app">
-    <router-view />
+  <div id="app">
+    <router-view/>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
+import {Calendar,ButtonGroup,Button} from 'element-ui'
+Vue.use(Calendar);
+Vue.use(ButtonGroup)
+Vue.use(Button)
 
 export default {
   name: "app",
