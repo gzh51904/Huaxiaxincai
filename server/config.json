@@ -1,0 +1,6 @@
+{
+    "PORT":2019,
+    "mongourl":"mongodb://localhost:27017",
+    "dbname":"Huaxia",
+    "pKey":"huaxiaxincai"
+}
