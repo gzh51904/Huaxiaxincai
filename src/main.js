@@ -6,6 +6,8 @@ import router from './routers';
 import 'amfe-flexible';
 import './assets/css/iconfont/iconfont.css'
 require("./assets/css/base.css");
+// import store from "./vuex";
+
 import axios from 'axios';
 import "mint-ui/lib/style.css"
 import 'vant/lib/icon/local.css';
@@ -46,5 +48,6 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  // store,
 }).$mount('#app')

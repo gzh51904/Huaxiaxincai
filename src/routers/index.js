@@ -29,6 +29,8 @@ import coupon from '../pages/coupon.vue';
 import date from '../pages/date.vue';
 import bankCard from '../pages/bankCard.vue';
 import account from '../pages/account.vue';
+import Itemdetails from '../pages/Itemdetails.vue';
+
 import axios from 'axios';
 import index from '../pages/index.vue'
 import noticelist from '../pages/noticelist.vue'
@@ -107,6 +109,7 @@ let router = new VueRouter({
         name : 'order',
         path : '/order',
         component:order,
+        
         children:[{
             name : 'holding',
             path : 'holding',
@@ -173,9 +176,11 @@ let router = new VueRouter({
         name:'AboutHuaXia',
         path:'/abouthuaxia',
         component:AboutHuaXia
-    }
- 
-    ]
+    },{
+        name:'Itemdetails',
+        path:'/itemdetails',
+        component:Itemdetails
+    }]
 });
 
 router.beforeEach((to,from,next)=>{
