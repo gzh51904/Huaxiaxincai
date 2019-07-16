@@ -1,0 +1,110 @@
+卷 Acer 的文件夹 PATH 列表
+卷序列号为 5400-4693
+C:.
+│ 
+ .eslintrc.js
+│  .gitignore
+│  babel.config.js
+│  list.txt
+│  package-lock.json
+│  package.json
+│  README.md
+│  vue.config.js
+│  
+├─public
+│      favicon.ico
+│      index.html
+│      
+├─server
+│  │  config.json
+│  │  server.js
+│  │  
+│  ├─db
+│  │      index.js
+│  │      mongo.js
+│  │      
+│  ├─dump
+│  │  └─Huaxia
+│  │          items.bson
+│  │          items.metadata.json
+│  │          users.bson
+│  │          users.metadata.json
+│  │          
+│  ├─routers
+│  │      index.js
+│  │      login.js
+│  │      project.js
+│  │      reg.js
+│  │      upload.js
+│  │      
+│  └─utils
+│          index.js
+│          token.js
+│          
+└─src
+    │  App.vue
+    │  main.js
+    │  
+    ├─assets
+    │  │  logo.png
+    │  │  
+    │  ├─css
+    │  │  │  base.css
+    │  │  │  
+    │  │  └─iconfont
+    │  │          iconfont.css
+    │  │          iconfont.eot
+    │  │          iconfont.js
+    │  │          iconfont.svg
+    │  │          iconfont.ttf
+    │  │          iconfont.woff
+    │  │          iconfont.woff2
+    │  │          
+    │  └─img
+    │          
+    ├─components
+    │      BotList.vue
+    │      Footer.vue
+    │      Header.vue
+    │      publiclist.vue
+    │      settinglist.vue
+    │      
+    ├─img
+    │     
+    │      
+    ├─js
+    │      bus.js
+    │      rem.js
+    │      
+    ├─pages
+    │      AboutHuaXia.vue
+    │      account.vue
+    │      ActivityList.vue
+    │      bankCard.vue
+    │      bill.vue
+    │      coupon.vue
+    │      date.vue
+    │      Discovery.vue
+    │      efficacy.vue
+    │      holding.vue
+    │      Home.vue
+    │      index.vue
+    │      Itemdetails.vue
+    │      kitson.vue
+    │      Login.vue
+    │      mine.vue
+    │      News.vue
+    │      newsList.vue
+    │      Notice.vue
+    │      noticelist.vue
+    │      order.vue
+    │      Project.vue
+    │      quit.vue
+    │      Reg.vue
+    │      setting.vue
+    │      Sign.vue
+    │      userinf.vue
+    │      
+    └─routers
+            index.js
+            
