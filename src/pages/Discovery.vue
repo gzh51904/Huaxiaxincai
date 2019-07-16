@@ -178,7 +178,7 @@ export default {
                 width: 1.62rem;
             }
             p{
-                font-size: 0.4rem;
+                font-size: 14px;
                 font-weight: bolder;
                 color:#2C2C2C;
                 padding-top:0.5rem;

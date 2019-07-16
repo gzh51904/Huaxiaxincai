@@ -131,7 +131,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .AboutHuaXia {
   background: #2c67e3;
   padding-bottom: 30px;

@@ -117,6 +117,9 @@ export default {
 };
 </script>
 <style>
+body {
+    background: none !important;
+}
 .login-wrap {
   width: 100%;
   max-width: 100%;
@@ -157,7 +160,7 @@ export default {
 }
 .login-wrap .login-main .inputBox .login-password .loginulisopen {
   position: absolute;
-  height: 100%;
+  /* height: 100%; */
   font-size: 12px;
   color: #fbb02b;
   top: 50%;
@@ -179,7 +182,7 @@ export default {
   color: #fff;
   font-size: 18px;
   text-align: center;
-  margin: 25px 35px;
+  margin: 25px auto!important;
   border-radius: 5px;
 }
 .loginBot {

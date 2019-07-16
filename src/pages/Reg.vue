@@ -122,7 +122,10 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
+body {
+    background: none !important;
+}
 .yuyinC {
   margin: 10px 15px 10px 0;
   color: #999;
@@ -163,9 +166,9 @@ export default {
 a {
   text-decoration: none;
 }
-.registBtn {
+/* .registBtn {
   margin: 20px 15px;
-}
+} */
 .btn_blue {
   width: 345.2px;
   display: block;

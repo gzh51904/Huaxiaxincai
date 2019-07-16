@@ -70,7 +70,7 @@
           </div>
         </div>
         <div>
-          <p class="indexProOneBtn" @click="goto('Productnews')">立即加入</p>
+          <p class="indexProOneBtn" @click="goto('Itemdetails')">立即加入</p>
         </div>
       </div>
     </div>
@@ -389,7 +389,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 body {
   background: #f5f5f5;
 }
@@ -721,7 +721,7 @@ body {
 }
 
 .sp {
-  width: 365px;
+  width: 360px;
   height: 55px;
 }
 .swiper1 {

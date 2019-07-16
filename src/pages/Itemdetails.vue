@@ -141,7 +141,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .proDetailTop {
   height: 260px;
   background: url("../assets/img/productDetBg.png") no-repeat;

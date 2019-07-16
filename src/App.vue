@@ -57,6 +57,10 @@ mark, audio, video {
     vertical-align: baseline;
     font: inherit;
     font-size: 100%;
+    background: none;
+}
+img{
+  width: 100%;
 }
 .tabbar {
   font-size: 30px;

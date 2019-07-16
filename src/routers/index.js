@@ -34,7 +34,7 @@ import Itemdetails from '../pages/Itemdetails.vue';
 import axios from 'axios';
 import index from '../pages/index.vue'
 import noticelist from '../pages/noticelist.vue'
-import Productnews from '../pages/Productnews.vue'
+// import Productnews from '../pages/Productnews.vue'
 import AboutHuaXia from '../pages/AboutHuaXia.vue'
 
 
@@ -168,11 +168,12 @@ let router = new VueRouter({
         path:'/',
         redirect:{name:'index'}
     },
+    // {
+    //     name:'Productnews',
+    //     path:'/productnews',
+    //     component:Productnews
+    // },
     {
-        name:'Productnews',
-        path:'/productnews',
-        component:Productnews
-    },{
         name:'AboutHuaXia',
         path:'/abouthuaxia',
         component:AboutHuaXia

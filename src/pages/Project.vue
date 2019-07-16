@@ -204,15 +204,17 @@
             </ul>
           </div>
         </template>
-        
       </van-cell>
       <div class="prodocutBeforeHint">
         <div class="prodocutBeforeHintMsg" style="margin-bottom:46px">
           <p class="prodocutBeforeHintArrow"></p>
           <p>查看往期项目</p>
-          <Footer></Footer>
         </div>
-      </template>
+      </div>
+      </van-pull-refresh>
+      <Footer></Footer>
+  </div>
+</template>
 <script>
 import Header from '../components/Header.vue'
 import Footer from "../components/Footer.vue"
@@ -309,7 +311,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .title {
   font-size: 18px;
   line-height: 18px;
@@ -407,6 +409,7 @@ export default {
   font-size: 20px;
   line-height: 14px;
   margin-bottom: 14px;
+  font-weight: bold;
 }
 .indexProListLi1Year em {
   font-size: 14px;
